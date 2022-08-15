@@ -11,6 +11,7 @@ app.use('/public', express.static('public'))
 
 app.get('/', (req, res) => {
     res.render('layout/index');
+    console.log('testing');
 });
 
 app.all('*', (req, res) => res.sendStatus(404))
