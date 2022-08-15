@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const expressLayouts = require('express-ejs-layouts');
 
-app.get('/', function(req, res){
-    res.send('Hello World this is my portfolio commit terbaru')
+app.set('view engine', 'ejs');
+app.use(expressLayouts)
+
+app.use('/public', express.static('public'))
+
+
+app.get('/', (req, res) => {
+    res.render('layout/index');
 });
+
+app.all('*', (req, res) => res.sendStatus(404))
 
 app.listen(port, () => {
     console.log(`Server running in port ${port}`);
