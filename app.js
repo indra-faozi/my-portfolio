@@ -6,7 +6,7 @@ const port = 3000;
 // app.set('view engine', 'ejs');
 // app.use(expressLayouts)
 
-app.use('/public', express.static('public'))
+app.use(__dirname + '/public', express.static('public'))
 
 
 app.get('/', (req, res) => {
