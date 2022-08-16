@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 // const expressLayouts = require('express-ejs-layouts');
 
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 // app.use(expressLayouts)
 
 app.use('/public', express.static('public'))
@@ -11,7 +11,7 @@ app.use('/public', express.static('public'))
 
 app.get('/', (req, res) => {
     // res.render('index');
-    res.send('Ini kalo berhasil barti ada masalah dengan res.render');
+    res.sendFile(__dirname + "/views/index.html");
 });
 
 app.all('*', (req, res) => res.sendStatus(404))
