@@ -10,7 +10,8 @@ app.use('/public', express.static('public'))
 
 
 app.get('/', (req, res) => {
-    res.render('index');
+    // res.render('index');
+    res.send('Ini kalo berhasil barti ada masalah dengan res.render');
 });
 
 app.all('*', (req, res) => res.sendStatus(404))
