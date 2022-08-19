@@ -12,7 +12,6 @@ app.use('/public', express.static(__dirname + '/public'))
 app.get('/', (req, res) => {
     // res.render('index');
     res.sendFile(__dirname + "/views/maintenance.html");
-    console.log('Ini untuk pengujian aja');
 });
 
 app.all('*', (req, res) => res.sendStatus(404))
