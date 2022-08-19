@@ -1,4 +1,1 @@
-node_modules/
-
-#testing ignore app.js
-app.js
+node_modules/*
