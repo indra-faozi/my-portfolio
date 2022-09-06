@@ -10,8 +10,8 @@ app.use('/public', express.static('public'))
 
 
 app.get('/', (req, res) => {
-    // res.render('index');
-    res.sendFile(__dirname + "/views/maintenance.html");
+    res.render('maintenance');
+    // res.sendFile(__dirname + "/views/maintenance.html");
 });
 
 app.all('*', (req, res) => res.sendStatus(404))

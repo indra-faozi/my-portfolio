@@ -1,11 +1,18 @@
-FROM node:14.16.0-alpine3.13
-
-RUN mkdir /app
-
-ADD . /app
+FROM node:14.16.0-alpine3.13 as builder
 
 WORKDIR /app
 
+COPY . ./
+
 RUN npm install
 
-CMD npm start
+EXPOSE 3000
+
+FROM astefanutti/scratch-node
+
+WORKDIR /app
+
+COPY --from=builder /app ./
+
+ENTRYPOINT ["node", "app.js"]
+# CMD npm start
