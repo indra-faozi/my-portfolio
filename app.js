@@ -10,7 +10,7 @@ app.use('/public', express.static('public'))
 
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('maintenance');
     // res.sendFile(__dirname + "/views/maintenance.html");
 });
 
