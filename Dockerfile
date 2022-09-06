@@ -15,4 +15,4 @@ WORKDIR /app
 COPY --from=builder /app ./
 
 ENTRYPOINT ["node", "app.js"]
-# CMD npm start
+# CMD npm start //Tidak bisa CMD karena scratch-node bukan alpine, tidak ada OS nya
