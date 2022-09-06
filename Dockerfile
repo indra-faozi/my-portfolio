@@ -6,6 +6,8 @@ COPY . ./
 
 RUN npm install
 
+EXPOSE 3000
+
 FROM astefanutti/scratch-node
 
 WORKDIR /app
