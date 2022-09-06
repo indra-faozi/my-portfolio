@@ -14,5 +14,5 @@ WORKDIR /app
 
 COPY --from=builder /app ./
 
-# ENTRYPOINT ["node", "app.js"]
-CMD npm start
+ENTRYPOINT ["node", "app.js"]
+# CMD npm start
